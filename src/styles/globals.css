@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Gotham-black';
+  src: url('/images/fonts/Gotham-Black-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body {
+  font-family: 'Gotham-black', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Gotham-black', serif;
+}
