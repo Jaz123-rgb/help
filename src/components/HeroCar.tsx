@@ -1,6 +1,5 @@
 
 import React from "react";
-import Image from "next/image";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
@@ -23,61 +22,57 @@ type Slide = SlideWithImage | SlideWithText;
 const slides: Slide[] = [
   {
     type: "image",
-    url: "/images/slide/slide-ok.svg",
+    url: "/images/slide/slide-on.png",
     alt: "slide uno",
     title: { text: "", image: "/images/logos/logoslideuno.svg" },
-    text: "AGENCIA CREATIVA",
+    text: "AGENCIA ",
   },
   {
     type: "image",
-    url: "/images/slide/slide-ok.svg",
+    url: "/images/slide/slide-tw.png",
     alt: "Slide dos",
-    title: { text: "", image: "/images/logos/logo-2.svg" },
-    text: "Pedir ayuda nunca fue",
+    title: "Nunca fue tan facil pedir ayuda",
+    text: "",
   },
   {
     type: "image",
-    url: "/images/slide/slide-first.jpg",
+    url: "/images/slide/slide-on.png",
     alt: "Imagen de prueba 3",
-    title: { text: "", image: "/image/" },
-    text: "Texto de la diapositiva 3",
+    title: { text: "", image: "/images/logos/logoslideuno.svg" },
+    text: "",
   },
   {
-    type: "text",
-    title: "Título de la diapositiva 4",
-    text: "Texto de la diapositiva 4",
+    type: "image",
+    url: "/images/slide/slide-on.png",
+    alt: "",
+    title: { text: "", image: "/images/logos/logoslideuno.svg" },
+    text: "",
   },
 ];
 
 const Hero: React.FC = () => {
   return (
-  
     <Carousel showThumbs={true} showStatus={false} infiniteLoop={true}>
       {slides.map((slide, index) => (
-        <div key={index} >
-          <div className="relative w-full h-screen ">
+        <div key={index} className="bg-blue-500">
+          <div className="relative w-full h-screen">
             {slide.type === "image" && (
-              <Image
+              <img
                 src={slide.url}
                 alt={slide.alt}
-                layout="fill"
-                objectFit="comtain"
+                className="absolute inset-0 w-full h-full object-cover"
               />
             )}
-            <div className="absolute inset-0
-        flex items-center justify-center 
-        text-white lg:text-4xl lg:leading-10  
-        bg-black bg-opacity-0">
-
-              <div className="text-center p-4">
+            <div className="absolute inset-0 flex items-center justify-center text-white lg:text-4xl lg:leading-10">
+              <div className="text-center p-4" id="slide">
                 {typeof slide.title === "object" && slide.title.image && (
                   <div className="mb-4">
-                    <Image
+                    <img
                       src={slide.title.image}
                       alt={slide.title.text}
                       width={50}
                       height={50}
-							quality={100}
+                      quality={100}
                     />
                   </div>
                 )}
