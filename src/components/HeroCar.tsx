@@ -1,5 +1,7 @@
 
+
 import React from "react";
+import Image from "next/image";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
@@ -57,9 +59,11 @@ const Hero: React.FC = () => {
         <div key={index} className="bg-blue-500">
           <div className="relative w-full h-screen">
             {slide.type === "image" && (
-              <img
+              <Image
                 src={slide.url}
                 alt={slide.alt}
+                width={1920} // Ancho de la imagen
+                height={1080} // Alto de la imagen
                 className="absolute inset-0 w-full h-full object-cover"
               />
             )}
@@ -67,7 +71,7 @@ const Hero: React.FC = () => {
               <div className="text-center p-4" id="slide">
                 {typeof slide.title === "object" && slide.title.image && (
                   <div className="mb-4">
-                    <img
+                    <Image
                       src={slide.title.image}
                       alt={slide.title.text}
                       width={50}
