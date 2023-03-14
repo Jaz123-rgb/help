@@ -73,7 +73,7 @@ const Hero: React.FC = () => {
                   <div className="mb-4">
                     <Image
                       src={slide.title.image}
-                      alt={slide.title.text}
+                      alt={slide.title.text || ""}
                       width={50}
                       height={50}
                       quality={100}
