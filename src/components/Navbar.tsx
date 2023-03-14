@@ -68,7 +68,7 @@ const Navbar: React.FC = () => {
             </div>
           </Link>
           <button
-            className=" md:hidden text-white focus:outline-none text-black"
+            className=" md:hidden focus:outline-none text-black"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <FaBars />
@@ -82,17 +82,17 @@ const Navbar: React.FC = () => {
           variants={linkVariants}
         >
           <Link href="/">
-            <div className="block mt-4 md:inline-block md:mt-0 mr-6 font-semibold">
+            <div className="block mt-4 md:inline-block md:mt-0 mr-6 hover:text-white  hover:bg-blue-900">
               Inicio
             </div>
           </Link>
           <Link href="/proyectos">
-            <div className="block mt-4 md:inline-block md:mt-0 mr-6 font-semibold">
+            <div className="block mt-4 md:inline-block md:mt-0 mr-6 hover:text-white  hover:bg-blue-900">
               Proyectos
             </div>
           </Link>
           <Link href="/contacto">
-            <div className="block mt-4 md:inline-block md:mt-0 ">
+            <div className="block mt-4 md:inline-block md:mt-0  hover:text-white  hover:bg-blue-900">
               Contacto
             </div>
           </Link>
