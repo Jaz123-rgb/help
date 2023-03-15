@@ -46,7 +46,7 @@ const Navbar: React.FC = () => {
 
   return (
     <motion.nav
-      className="bg-gradient-to-r from-blue-900 to-white text-black fixed z-50 w-full"
+      className=" text-white fixed z-50 w-full  bg-[#2c5b8c]"
       variants={navbarVariants}
       initial="hidden"
       animate="visible"
@@ -68,7 +68,7 @@ const Navbar: React.FC = () => {
             </div>
           </Link>
           <button
-            className=" md:hidden focus:outline-none text-black"
+            className=" md:hidden focus:outline-none text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <FaBars />
