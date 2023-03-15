@@ -1,6 +1,7 @@
+
 import { useState, useEffect, RefObject } from 'react';
 
-function useOnScreen(ref: RefObject<Element>) {
+function useOnScreen(ref: RefObject<Element>, rootMargin = '0px') {
   const [isIntersecting, setIntersecting] = useState(false);
 
   useEffect(() => {
@@ -10,7 +11,7 @@ function useOnScreen(ref: RefObject<Element>) {
         setIntersecting(entry.isIntersecting);
       },
       {
-        rootMargin: '0px',
+        rootMargin,
         threshold: 0.5,
       }
     );
@@ -22,7 +23,7 @@ function useOnScreen(ref: RefObject<Element>) {
     return () => {
       observer.disconnect();
     };
-  }, [ref]);
+  }, [ref, rootMargin]);
 
   return isIntersecting;
 }

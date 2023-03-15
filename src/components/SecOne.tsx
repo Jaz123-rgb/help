@@ -13,7 +13,7 @@ const SecOne: React.FC<SecOneProps> = () => {
   const animation = useAnimation();
   const [isVisible, setIsVisible] = useState(false);
 
-  const onScreen = useOnScreen(ref, "-100px");
+const onScreen = useOnScreen(ref);
 
   useEffect(() => {
     if (onScreen) {
