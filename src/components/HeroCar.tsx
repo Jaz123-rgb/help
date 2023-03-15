@@ -1,4 +1,6 @@
 import React from "react";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -51,6 +53,23 @@ const slides: Slide[] = [
 ];
 
 const Hero: React.FC = () => {
+
+ const variants = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: -100 },
+  };
+
+  const [controls, setControls] = useState({ y: 0 });
+
+  useEffect(() => {
+    const updateControls = () => {
+      setControls({ y: window.scrollY });
+    };
+
+    window.addEventListener("scroll", updateControls);
+
+    return () => window.removeEventListener("scroll", updateControls);
+  }, []);
   return (
     <Carousel showThumbs={true} showStatus={false} infiniteLoop={true}>
       {slides.map((slide, index) => (

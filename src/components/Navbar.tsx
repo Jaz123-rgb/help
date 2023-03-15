@@ -46,7 +46,7 @@ const Navbar: React.FC = () => {
 
   return (
     <motion.nav
-      className="bg-gradient-to-r from-blue-900 to-white text-black"
+      className="bg-gradient-to-r from-blue-900 to-white text-black fixed z-50 w-full"
       variants={navbarVariants}
       initial="hidden"
       animate="visible"
@@ -74,30 +74,30 @@ const Navbar: React.FC = () => {
             <FaBars />
           </button>
         </motion.div>
-		  <div className="flex justify-center">
-        <motion.div
-          className={`${
-            isMenuOpen ? "block" : "hidden"
-          } md:flex md:items-center`}
-          variants={linkVariants}
-        >
-          <Link href="/">
-            <div className="block mt-4 md:inline-block md:mt-0 mr-6 hover:text-white  hover:bg-blue-900">
-              Inicio
-            </div>
-          </Link>
-          <Link href="/proyectos">
-            <div className="block mt-4 md:inline-block md:mt-0 mr-6 hover:text-white  hover:bg-blue-900">
-              Proyectos
-            </div>
-          </Link>
-          <Link href="/contacto">
-            <div className="block mt-4 md:inline-block md:mt-0  hover:text-white  hover:bg-blue-900">
-              Contacto
-            </div>
-          </Link>
-        </motion.div>
-			</div>
+        <div className="flex justify-center">
+          <motion.div
+            className={`${
+              isMenuOpen ? "block" : "hidden"
+            } md:flex md:items-center`}
+            variants={linkVariants}
+          >
+            <Link href="/">
+              <div className="block mt-4 md:inline-block md:mt-0 mr-6 hover:text-white  hover:bg-blue-900">
+                Inicio
+              </div>
+            </Link>
+            <Link href="/proyectos">
+              <div className="block mt-4 md:inline-block md:mt-0 mr-6 hover:text-white  hover:bg-blue-900">
+                Proyectos
+              </div>
+            </Link>
+            <Link href="/contacto">
+              <div className="block mt-4 md:inline-block md:mt-0  hover:text-white  hover:bg-blue-900">
+                Contacto
+              </div>
+            </Link>
+          </motion.div>
+        </div>
       </div>
     </motion.nav>
   );
