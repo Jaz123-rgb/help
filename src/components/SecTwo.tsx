@@ -39,7 +39,7 @@ const onScreen = useOnScreen(ref);
 
   const title = "¿Quiénes somos?";
   const description = "Somos una empresa con una perspectiva del marketing disruptiva ";
-  const imgSrc = "/images/projectos/BRAND.jpg";
+  const imgSrc = "/images/projectos/pjimage.jpg";
   const altText = "";
 
   return (
